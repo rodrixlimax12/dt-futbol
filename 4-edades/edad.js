@@ -16,3 +16,16 @@ Escriba un programa que:
 Tip: consulten los métodos de la clase Date
 https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Date
 */
+function calcularEdad(fechaNacimiento) {
+  var fechaNac = new Date(fechaNacimiento);
+  var fechaActual = new Date();
+  var diferencia = fechaActual - fechaNac;
+  var edad = Math.floor(diferencia / (1000 * 60 * 60 * 24 * 365.25));
+  return edad;
+}
+var nombre = "Lucas";
+var apellido = "Gonzales";
+var apodo = "Luck";
+var fechaNacimiento = "2003-07-16";
+var edadJugador = calcularEdad(fechaNacimiento);
+console.log(nombre + ' "' + apodo + '" ' + apellido + ' (' + edadJugador + ' años)');
